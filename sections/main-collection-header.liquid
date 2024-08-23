@@ -1,0 +1,196 @@
+{%- liquid
+
+  assign show_header_image = false
+  assign float_header = false
+  assign is_parallax = true
+  assign title_below_banner = false
+  assign center_heading = false
+
+  if section.settings.image != blank
+    assign image = section.settings.image
+    assign show_header_image = true
+  endif
+
+  if section.settings.show_collection_image and collection.image != blank
+    assign image = collection.image
+    assign show_header_image = true
+  endif
+
+  unless section.settings.parallax_scroll
+    assign is_parallax = true
+  endunless
+
+  if section.settings.center_heading
+    assign center_heading = true
+  endif
+
+  if section.settings.float_header
+    assign float_header = true
+  endif
+
+  if show_header_image == false or float_header == false
+    assign title_below_banner = true
+  endif
+
+  if float_header == false
+    assign title_below_banner = true
+  endif
+
+  assign heading = collection.title
+
+  assign sm_render = '100vw'
+  assign md_render = '100vw'
+  assign lg_render = '100vw'
+
+  # LCP logic
+  assign loading = 'lazy'
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign loading = 'eager'
+    assign fetch_priority = 'high'
+  endif
+
+-%}
+
+<section class="main__section section__header section-{{ section.id }}"
+{% if is_parallax %}
+data-section-type="parallax-section"
+data-scale="1.2"
+{% endif %}
+data-aos="{{ settings.scroll_animation }}"
+data-section-id="{{ section.id }}">
+
+  {% if show_header_image %}
+    <div class="collection-banner {% if is_parallax %} parallax-banner parallax{% endif %}">
+      {% if is_parallax %}
+        <div class="row parallax__container">
+          <div class="parralax__image">
+            {% render 'basic-responsive-image',
+              type:  image,
+              width: 2400,
+              loading: 'eager',
+              sm_render: sm_render,
+              md_render: md_render,
+              lg_render: lg_render,
+              loading: loading,
+              fetchpriority: fetch_priority
+            %}
+          </div>
+        </div>
+      {% else %}
+        <div class="background-image">
+          {% render 'basic-responsive-image',
+            type:  image,
+            width: 2400,
+            loading: 'eager',
+            sm_render: sm_render,
+            md_render: md_render,
+            lg_render: lg_render,
+            loading: loading,
+            fetchpriority: fetch_priority
+          %}
+        </div>
+      {% endif %}
+
+    {% if float_header %}
+        <div class="banner-caption">
+          <h1>{{ heading }}</h1>
+        </div>
+    {% endif %}
+    </div>
+  {% endif %}
+
+  {% if title_below_banner %}
+    <div class="main__section-heading grid__wrapper{% if center_heading %} center{% endif %}">
+      <h1 class="span-12 auto mb0">{{ heading | escape }}</h1>
+    </div>
+  {% endif %}
+
+  <style>
+    .section__header.section-{{ section.id }} .collection-banner {
+      height: {{ section.settings.image_height }}px;
+      overflow: hidden;
+    }
+    {% unless is_parallax %}
+      .section__header.section-{{ section.id }}  .collection-banner img {
+        height: {{ section.settings.image_height }}px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+    {% endunless %}
+    {% if center_heading %}
+      .section__header.section-{{ section.id }}  .collection-banner .banner-caption {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        margin-left: 0px !important;
+      }
+    {% endif %}
+    .section__header.section-{{ section.id }} .collection-banner .background-image {
+      background-size: cover;
+      background-position: center center;
+      height: {{ section.settings.image_height }}px;
+    }
+    @media screen and (max-width: 740px) {
+      .section__header.section-{{ section.id }}  .collection-banner,
+      .section__header.section-{{ section.id }}  .collection-banner .background-image {
+        height: 250px;
+      }
+      .section__header.section-{{ section.id }} .collection-banner img {
+        width: 100%;
+        height: 250px;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "or select an image",
+      "info" : "1920px x 1000px recommended"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 250,
+      "max": 500,
+      "step": 50,
+      "unit": "px",
+      "label": "Image height",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax_scroll",
+       "label": "Add parallax scrolling"
+    },
+    {
+      "type": "checkbox",
+      "id": "float_header",
+       "label": "Float header on image"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_heading",
+       "label": "Center align",
+       "default": true
+    }
+  ]
+}
+{% endschema %}

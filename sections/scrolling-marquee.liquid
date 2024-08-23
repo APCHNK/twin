@@ -1,0 +1,532 @@
+{%- liquid
+
+  assign speed = section.settings.speed
+
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --font-size:  {{ section.settings.text_size }}px;
+    --text-color: {{ section.settings.color }};
+    --background: {{ section.settings.background }};
+  }
+  @media screen and (max-width: 740px) {
+    #shopify-section-{{ section.id }} {
+      --font-size:  calc({{ section.settings.text_size }}px - ({{ section.settings.text_size }}px * 0.15));
+    }
+  }
+  #shopify-section-{{ section.id }} .scrolling__marquee-section {
+    padding: {{ section.settings.padding }}px 0;
+  }
+  .scrolling__marquee-section.section-{{ section.id }} .scrolling__marquee--content {
+    animation: marquee {{ speed }}s linear infinite;
+  }
+{% endstyle %}
+
+<section class="global__section scrolling__marquee-section {% if section.settings.no_bottom_margin %}mb0 {% endif %}section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="rich-text-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="scrolling__marquee--wrapper grid__wrapper edge">
+    <div class="scrolling__marquee--content scmq-{{ section.id }} span-12 auto">
+      {% for repeat_index in (1..10) %}
+        {% for block in section.blocks %}
+
+          {% liquid
+            assign has_text = false
+            if block.settings.scrolling_text != blank
+              assign scrolling_text = block.settings.scrolling_text
+              assign has_text = true
+            endif
+            assign has_image = false
+            if block.settings.image != blank
+              assign image = block.settings.image
+              assign has_image = true
+            endif
+              assign has_icon = false
+            if block.settings.icon != 'none'
+              assign type = 'mrparker'
+              assign icon = block.settings.icon
+              case icon
+                when 'burger', 'cafe', 'cake', 'camera', 'chat', 'clock', 'cookie', 'credit-card', 'croissant', 'desktop', 'diamond', 'dry-cleaning', 'envelope', 'finger-print', 'flower', 'forest', 'gaming', 'gift', 'globe', 'headphones', 'health', 'heart', 'info', 'ice-cream', 'laptop', 'laundry', 'liquor', 'location', 'lock', 'mic', 'mobile-phone', 'nature', 'new-release', 'pets', 'pizza', 'phone', 'plant', 'rabbit', 'radio', 'return', 'savings', 'shield', 'smile', 'star', 'sustainable', 'take-out', 'trophy', 'tv', 'verified', 'washing-machine', 'watch', 'wine', 'world'
+                  assign type = 'material'
+                when 'checkmark', 'sale-tag', 'secure', 'ship-truck'
+                  assign type = 'apollo'
+              endcase
+              assign has_icon = true
+            endif
+            assign icon_both_sides = false
+            if block.settings.icon_both_sides
+              assign icon_both_sides = true
+            endif
+          %}
+
+          <span class="scrolling__marquee--item item-{{ forloop.index }}"{% unless forloop.first %} aria-hidden="true"{% endunless %} {{ block.shopify_attributes }}>
+            {% capture chosen_icon %}
+              {% if has_image or has_icon %}
+                <span class="scrolling--image{% if has_image == false %} no--image{% endif %}">
+                  {% if has_image %}
+                    {% liquid
+                      if section.index == 1
+                        assign fetchpriority = 'high'
+                        assign loading = 'eager'
+                      endif
+                    %}
+                    {%
+                      render 'basic-responsive-image',
+                      type: image,
+                      loading: loading,
+                      fetchpriority: fetchpriority,
+                      width: 120
+                    %}
+                  {% elsif has_icon %}
+                    {% render 'snip-icons',
+                      wrapper: '.scrolling__text-icon',
+                      type: type,
+                      icon: block.settings.icon,
+                      size: section.settings.icon_height | append: 'px',
+                      fill: section.settings.color %}
+                  {% endif %}
+                </span>
+              {% endif %}
+            {% endcapture %}
+            {{ chosen_icon }}
+            {% if has_text %}
+              <span class="scrolling--text">
+                {{ scrolling_text }}
+              </span>
+            {% endif %}
+            {% if icon_both_sides %}
+              {{ chosen_icon }}
+            {% endif %}
+          </span>
+
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Scrolling marquee",
+  "max_blocks":10,
+  "blocks": [{
+    "type": "text",
+    "name": "Text",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "scrolling_text",
+        "label": "Text",
+        "default": "<p>Scrolling text</p>"
+      },
+      {
+        "type": "select",
+        "id": "icon",
+        "label": "Choose an icon",
+        "options": [
+          {
+            "value": "none",
+            "label": "-- None"
+          },
+          {
+            "group": "Apparel",
+            "value": "dry-cleaning",
+            "label": "Dry cleaning"
+          },
+          {
+            "group": "Apparel",
+            "value": "laundry",
+            "label": "Laundry"
+          },
+          {
+            "group": "Apparel",
+            "value": "ruler",
+            "label": "Ruler"
+          },
+          {
+            "group": "Apparel",
+            "value": "washing-machine",
+            "label": "Washing machine"
+          },
+          {
+            "group": "Communication",
+            "value": "chat",
+            "label": "Chat"
+          },
+          {
+            "group": "Communication",
+            "value": "checkmark",
+            "label": "Checkmark"
+          },
+          {
+            "group": "Communication",
+            "value": "clock",
+            "label": "Clock"
+          },
+          {
+            "group": "Communication",
+            "value": "envelope",
+            "label": "Envelope"
+          },
+          {
+            "group": "Communication",
+            "value": "gift",
+            "label": "Gift"
+          },
+          {
+            "group": "Communication",
+            "value": "info",
+            "label": "Info"
+          },
+          {
+            "group": "Communication",
+            "value": "location",
+            "label": "Location"
+          },
+          {
+            "group": "Communication",
+            "value": "mic",
+            "label": "Mic"
+          },
+          {
+            "group": "Communication",
+            "value": "mobile-phone",
+            "label": "Mobile phone"
+          },
+          {
+            "group": "Communication",
+            "value": "phone",
+            "label": "Phone"
+          },
+          {
+            "group": "Communication",
+            "value": "smile",
+            "label": "Smile emoji"
+          },
+          {
+            "group": "Food & drink",
+            "value": "burger",
+            "label": "Burger"
+          },
+          {
+            "group": "Food & drink",
+            "value": "cafe",
+            "label": "Cafe"
+          },
+          {
+            "group": "Food & drink",
+            "value": "cake",
+            "label": "Cake"
+          },
+          {
+            "group": "Food & drink",
+            "value": "cookie",
+            "label": "Cookie"
+          },
+          {
+            "group": "Food & drink",
+            "value": "croissant",
+            "label": "Croissant"
+          },
+          {
+            "group": "Food & drink",
+            "value": "ice-cream",
+            "label": "Ice cream"
+          },
+          {
+            "group": "Food & drink",
+            "value": "liquor",
+            "label": "Liquor"
+          },
+          {
+            "group": "Food & drink",
+            "value": "pizza",
+            "label": "Pizza"
+          },
+          {
+            "group": "Food & drink",
+            "value": "take-out",
+            "label": "Take out"
+          },
+          {
+            "group": "Food & drink",
+            "value": "wine",
+            "label": "Wine"
+          },
+          {
+            "group": "Nature",
+            "value": "flower",
+            "label": "Flower"
+          },
+          {
+            "group": "Nature",
+            "value": "forest",
+            "label": "Forest"
+          },
+          {
+            "group": "Nature",
+            "value": "nature",
+            "label": "Nature"
+          },
+          {
+            "group": "Nature",
+            "value": "pets",
+            "label": "Pets"
+          },
+          {
+            "group": "Nature",
+            "value": "plant",
+            "label": "Plant"
+          },
+          {
+            "group": "Nature",
+            "value": "rabbit",
+            "label": "Rabbit"
+          },
+          {
+            "group": "Nature",
+            "value": "sustainable",
+            "label": "Sustainable"
+          },
+          {
+            "group": "Security",
+            "value": "finger-print",
+            "label": "Finger print"
+          },
+          {
+            "group": "Security",
+            "value": "lock",
+            "label": "Lock"
+          },
+          {
+            "group": "Security",
+            "value": "secure",
+            "label": "Secure"
+          },
+          {
+            "group": "Security",
+            "value": "shield",
+            "label": "Shield"
+          },
+          {
+            "group": "Security",
+            "value": "verified",
+            "label": "Verified"
+          },
+          {
+            "group": "Shopping",
+            "value": "bag",
+            "label": "Bag"
+          },
+          {
+            "group": "Shopping",
+            "value": "cart",
+            "label": "Cart"
+          },
+          {
+            "group": "Shopping",
+            "value": "credit-card",
+            "label": "Credit card"
+          },
+          {
+            "group": "Shopping",
+            "value": "new-release",
+            "label": "New release"
+          },
+          {
+            "group": "Shopping",
+            "value": "return",
+            "label": "Return"
+          },
+          {
+            "group": "Shopping",
+            "value": "sale-tag",
+            "label": "Sale tag"
+          },
+          {
+            "group": "Shopping",
+            "value": "savings",
+            "label": "Savings"
+          },
+          {
+            "group": "Tech",
+            "value": "camera",
+            "label": "Camera"
+          },
+          {
+            "group": "Tech",
+            "value": "desktop",
+            "label": "Desktop"
+          },
+          {
+            "group": "Tech",
+            "value": "gaming",
+            "label": "Gaming"
+          },
+          {
+            "group": "Tech",
+            "value": "headphones",
+            "label": "Headphones"
+          },
+          {
+            "group": "Tech",
+            "value": "laptop",
+            "label": "Laptop"
+          },
+          {
+            "group": "Tech",
+            "value": "radio",
+            "label": "Radio"
+          },
+          {
+            "group": "Tech",
+            "value": "tv",
+            "label": "Tv"
+          },
+          {
+            "group": "Tech",
+            "value": "watch",
+            "label": "Watch"
+          },
+          {
+            "group": "Travel & transport",
+            "value": "globe",
+            "label": "Globe"
+          },
+          {
+            "group": "Travel & transport",
+            "value": "home",
+            "label": "Home"
+          },
+          {
+            "group": "Travel & transport",
+            "value": "ship-truck",
+            "label": "Shipping"
+          },
+          {
+            "group": "Travel & transport",
+            "value": "world",
+            "label": "World"
+          },
+          {
+            "group": "Other",
+            "value": "diamond",
+            "label": "Diamond"
+          },
+          {
+            "group": "Other",
+            "value": "health",
+            "label": "Health"
+          },
+          {
+            "group": "Other",
+            "value": "heart",
+            "label": "Heart"
+          },
+          {
+            "group": "Other",
+            "value": "search",
+            "label": "Search"
+          },
+          {
+            "group": "Other",
+            "value": "star",
+            "label": "Star"
+          },
+          {
+            "group": "Other",
+            "value": "trophy",
+            "label": "Trophy"
+          }
+        ],
+        "default": "chat"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Or add an image",
+        "info": "100px x 100px recommended"
+      },
+      {
+        "type":"checkbox",
+        "label":"Icon both sides of text",
+        "id":"icon_both_sides"
+      }
+    ]
+  }],
+  "settings": [
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 13,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "label": "Scroll speed",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "icon_height",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon height",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 30
+    },
+    {
+      "type":"color",
+      "label":"Text color",
+      "id":"color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "label":"Background color",
+      "id":"background"
+    },
+    {
+      "type":"checkbox",
+      "id":"no_bottom_margin",
+      "label":"Remove bottom margin",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+    "name": "Scrolling text",
+    "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

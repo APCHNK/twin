@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "blog-images": {
+      "type": "main-blog-images",
+      "blocks": {
+        "a5c618ba-e7af-4c2b-a9a3-12633022ac81": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": "\/"
+          }
+        },
+        "8aa11773-e52a-4451-a11b-7a9f91b09942": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": "\/"
+          }
+        },
+        "98935045-661d-4fef-ac0b-1ef38eedb008": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": "\/"
+          }
+        }
+      },
+      "block_order": [
+        "a5c618ba-e7af-4c2b-a9a3-12633022ac81",
+        "8aa11773-e52a-4451-a11b-7a9f91b09942",
+        "98935045-661d-4fef-ac0b-1ef38eedb008"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "7f8526f1-a535-48ad-9573-9171a113bfee": {
+          "type": "filter_tags",
+          "settings": {
+            "filter_by_heading": "Filter by"
+          }
+        },
+        "95e3be82-ca3c-4aea-a216-e855288c56df": {
+          "type": "promo",
+          "settings": {
+            "promo_link": "",
+            "adsense_code": ""
+          }
+        },
+        "19d39b39-7fed-465e-8f13-e125ec07345b": {
+          "type": "subscribe",
+          "settings": {
+            "subscribe_heading": "Join our list",
+            "subscribe_subheading": "Sign up for emails"
+          }
+        }
+      },
+      "block_order": [
+        "7f8526f1-a535-48ad-9573-9171a113bfee",
+        "95e3be82-ca3c-4aea-a216-e855288c56df",
+        "19d39b39-7fed-465e-8f13-e125ec07345b"
+      ],
+      "settings": {
+        "show_date": true,
+        "show_tag": true,
+        "show_author": true,
+        "recent_posts_layout": "list",
+        "recent_posts_heading": "Recent"
+      }
+    },
+    "162699211917340766": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "",
+        "show_all": true,
+        "show_more_text": "View all",
+        "carousel": true,
+        "grid": 4,
+        "products_shown": 4
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "blog-images",
+    "main",
+    "162699211917340766"
+  ]
+}

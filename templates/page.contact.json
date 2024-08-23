@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-contact-page",
+      "settings": {
+        "contact_form_position": "right",
+        "content_width": 90,
+        "cf_show_first_name": true,
+        "cf_show_last_name": true,
+        "cf_show_company_name": true,
+        "cf_show_address": true,
+        "cf_show_website_url": false,
+        "cf_show_phone": false,
+        "cf_show_custom_field_one": false,
+        "cf_custom_field_one": "Custom Field One",
+        "cf_custom_field_one_type": "input",
+        "cf_show_custom_field_two": false,
+        "cf_custom_field_two": "Custom Field Two",
+        "cf_custom_field_two_type": "input"
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main"
+  ]
+}

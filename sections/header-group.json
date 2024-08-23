@@ -1,0 +1,84 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "search_box_ekYNmQ": {
+          "type": "search_box",
+          "settings": {
+          }
+        },
+        "text_FEnhFT": {
+          "type": "text",
+          "settings": {
+            "announcement_text": "<p>БЕЗКОШТОВНА ДОСТАВКА<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "search_box_ekYNmQ",
+        "text_FEnhFT"
+      ],
+      "custom_css": [
+        "announcement-bar {position: fixed;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_mobile": true,
+        "icons_only": true,
+        "announcement_text_size": 12,
+        "show_locale_selector": false,
+        "show_country_selector": false,
+        "show_flag": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "inline_center",
+        "full_width": false,
+        "absolute_header": false,
+        "nav_top_border": false,
+        "nav_bottom_border": false,
+        "homepage_nav_color": "#ffffff",
+        "nav_border_color": "#161616",
+        "logo": "shopify:\/\/shop_images\/qa.png",
+        "logo_max_width": 250,
+        "main_nav": "main-menu",
+        "nav_height": 74,
+        "nav_hover_effect": "shift-box",
+        "nav_split": 4
+      }
+    },
+    "store-messages": {
+      "type": "store-messages",
+      "blocks": {
+        "6015385c-c127-415f-b383-c91528d7b35f": {
+          "type": "message",
+          "settings": {
+            "message_content": "<p>LUXURY парфумерія для кожного<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6015385c-c127-415f-b383-c91528d7b35f"
+      ],
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "show_nav_buttons": false,
+        "color": "#000000",
+        "background": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "store-messages"
+  ]
+}

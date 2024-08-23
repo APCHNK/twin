@@ -1,0 +1,15 @@
+<section class="collection__description-section row grid__wrapper"
+data-section-id="{{ section.id }}"
+data-aos="{{ settings.scroll_animation }}">
+  <div class="collection__description span-12">
+    <div class="rte">{{ collection.description }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Description",
+  "settings": [
+  ]
+}
+{% endschema %}

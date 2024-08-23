@@ -1,0 +1,72 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "1520914274198": {
+          "type": "text",
+          "settings": {
+            "title": "About",
+            "footer_text": "<p>Add some text that introduces your brand to new customers. or add some information about your store hours and policies.<\/p>",
+            "column_size": 3
+          }
+        },
+        "1520914258601": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "",
+            "title": "Menu",
+            "column_size": 2
+          }
+        },
+        "1520914306190": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "",
+            "title": "Menu",
+            "column_size": 2
+          }
+        },
+        "e9fb993a-9b86-4b68-9408-ec218c596670": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "",
+            "title": "Menu",
+            "column_size": 2
+          }
+        },
+        "1520914313408": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Connect",
+            "mailing_subheading": "<p>Join our mailing list for updates<\/p>",
+            "column_size": 3
+          }
+        }
+      },
+      "block_order": [
+        "1520914274198",
+        "1520914258601",
+        "1520914306190",
+        "e9fb993a-9b86-4b68-9408-ec218c596670",
+        "1520914313408"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "show_credit_cards": true,
+        "enable_follow_on_shop": true,
+        "show_copyright": true,
+        "show_locale_selector": true,
+        "show_country_selector": true,
+        "show_flag": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

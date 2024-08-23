@@ -1,0 +1,276 @@
+{
+  "sections": {
+    "background_video_WXMTKH": {
+      "type": "background-video",
+      "disabled": true,
+      "settings": {
+        "video_url": "https:\/\/www.youtube.com\/watch?v=HC0kQKIF9Ss",
+        "video_url_mp4": "",
+        "video_height": "fixed_height",
+        "desktop_height": 700,
+        "mobile_height": 350,
+        "caption_below": false,
+        "description": "Describe the video for customers using screen readers",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "heading": "",
+        "subheading": "",
+        "link": "shopify:\/\/collections\/all",
+        "button_text": "",
+        "text_color": "#000000",
+        "button_color": "#ffffff",
+        "button_background": "#000000",
+        "background_color": "rgba(0,0,0,0)",
+        "no_bottom_margin": false
+      }
+    },
+    "1626985554485b7627": {
+      "type": "slideshow",
+      "blocks": {
+        "1626985554485b7627-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a0c7127a-85d5-4f5d-aaed-ea95b4d69bd7.jpg",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "caption_position": "bottom_center",
+            "mobile_image": "shopify:\/\/shop_images\/22.jpg",
+            "hide_caption_background": false,
+            "heading": "",
+            "subheading": "",
+            "link": "shopify:\/\/collections\/парфюми",
+            "button_text": "Переглянути всі",
+            "second_link": "shopify:\/\/collections\/жіночі",
+            "second_button_text": "",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_background": "{{ shop.brand.colors.primary[0].background }}",
+            "caption_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "1626985554485b7627-1"
+      ],
+      "settings": {
+        "display_wide": true,
+        "slideshow_size": "natural",
+        "desktop_height": 500,
+        "mobile_height": 600,
+        "caption_below": false,
+        "pager": "arrows",
+        "transition": "fade",
+        "slider_speed": 5,
+        "video_audio": "off",
+        "slide_heading_size": 50,
+        "subheading_size": 20,
+        "no_bottom_margin": false
+      }
+    },
+    "16269857031cf610ff": {
+      "type": "editorial-columns",
+      "blocks": {
+        "16269857031cf610ff-0": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.png",
+            "title": "Оригінальна французька сировина",
+            "richtext": "<p>У виробництві наших парфумів ми використовуємо найкращі французькі компоненти, вся продукція є сертифікованою та безпечною<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "center",
+            "column_size": 2
+          }
+        },
+        "16269857031cf610ff-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.png",
+            "title": "Люксова парфумерія для всіх",
+            "richtext": "<p>Ми віримо, що кожен заслуговує на люкс парфумерію, ми не сплачуємо роялті та ліцензійних зборів, та використовуємо наше пакування задля зменшення ціни на 70-90%<\/p><p><\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "center",
+            "column_size": 2
+          }
+        },
+        "16269857031cf610ff-2": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.png",
+            "title": "Безкоштовна доставка",
+            "richtext": "<p>Ми є партнерами Нової Пошти, тому пропонуємо вам найвигідніші умови. Також для нас нормально, якщо аромат вам не сподобався, та відмовилися від нього на пошті<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "16269857031cf610ff-0",
+        "16269857031cf610ff-1",
+        "16269857031cf610ff-2"
+      ],
+      "settings": {
+        "title": "",
+        "rich_text": "",
+        "image_size": "400",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": true,
+        "color": "#000000",
+        "background": "#ffffff",
+        "padding": 30
+      }
+    },
+    "32fd0fe0-9472-4b34-b9b3-6e34b425db16": {
+      "type": "scrolling-marquee",
+      "blocks": {
+        "text_dHxNVP": {
+          "type": "text",
+          "settings": {
+            "scrolling_text": "<p>Scrolling text<\/p>",
+            "icon": "chat",
+            "icon_both_sides": false
+          }
+        },
+        "text_CQRX6c": {
+          "type": "text",
+          "settings": {
+            "scrolling_text": "<p>Scrolling text<\/p>",
+            "icon": "chat",
+            "icon_both_sides": false
+          }
+        }
+      },
+      "block_order": [
+        "text_dHxNVP",
+        "text_CQRX6c"
+      ],
+      "settings": {
+        "text_size": 15,
+        "speed": 15,
+        "icon_height": 20,
+        "padding": 15,
+        "color": "#ffffff",
+        "background": "#000000",
+        "no_bottom_margin": true
+      }
+    },
+    "16269856255a06b94b": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".prod-subtitle {color: #4c0dad; font-size: 13px; font-weight: lighter;}",
+        ".prod-title {font-weight: bold; font-size: 15px;}",
+        ".price-item--regular {font-size: 13px;}",
+        ".product-info {color: #4c0dad;}"
+      ],
+      "settings": {
+        "title": "Бестселлери",
+        "collection": "парфюми",
+        "show_all": true,
+        "show_more_text": "View all",
+        "carousel": true,
+        "grid": 4,
+        "products_shown": 6
+      }
+    },
+    "image_with_text_cRdRXR": {
+      "type": "image-with-text",
+      "blocks": {
+        "image_FJxHke": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_Hhy9gC": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "image_FJxHke",
+        "image_Hhy9gC"
+      ],
+      "settings": {
+        "layout": "left",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "Image with text",
+        "text": "<p>Pair text with an image to give focus to your chosen content.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#ded6c0",
+        "no_bottom_margin": false
+      }
+    },
+    "16269856419b86506c": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "parallax_scroll": false,
+        "page_height": 500,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "caption_position": "top_right",
+        "heading": "Image with text overlay",
+        "subheading": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+        "button_text": "Button",
+        "button_link": "\/collections\/all",
+        "text_color": "#000000",
+        "button_color": "#ffffff",
+        "button_background": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    },
+    "162698565979bc409f": {
+      "type": "shop-the-look",
+      "settings": {
+        "title": "Shop the Look",
+        "look_collection": "парфюми",
+        "show_buy_buttons": false,
+        "layout": "left"
+      }
+    },
+    "rich_text_b9baFK": {
+      "type": "rich-text",
+      "settings": {
+        "title": "Welcome",
+        "rich_text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "alignment": "left",
+        "text_width": 60,
+        "text_size": 15,
+        "padding": 30,
+        "color": "#000000",
+        "background": "",
+        "no_bottom_margin": false
+      }
+    },
+    "1626985717d60f1b9e": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Subscribe to our newsletter",
+        "newsletter_subheading": "<p>Signup to receive news and updates<\/p>",
+        "show_social_icons": false,
+        "padding": 30,
+        "text_color": "#000000",
+        "background_color": "#f7f7f7"
+      }
+    }
+  },
+  "order": [
+    "background_video_WXMTKH",
+    "1626985554485b7627",
+    "16269857031cf610ff",
+    "32fd0fe0-9472-4b34-b9b3-6e34b425db16",
+    "16269856255a06b94b",
+    "image_with_text_cRdRXR",
+    "16269856419b86506c",
+    "162698565979bc409f",
+    "rich_text_b9baFK",
+    "1626985717d60f1b9e"
+  ]
+}

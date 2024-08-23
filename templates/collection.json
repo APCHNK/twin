@@ -1,0 +1,85 @@
+{
+  "wrapper": ".collection__template--container",
+  "sections": {
+    "collection-header": {
+      "type": "main-collection-header",
+      "disabled": true,
+      "settings": {
+        "show_collection_image": true,
+        "image": "shopify:\/\/shop_images\/a0c7127a-85d5-4f5d-aaed-ea95b4d69bd7.jpg",
+        "image_height": 250,
+        "parallax_scroll": false,
+        "float_header": false,
+        "center_heading": false
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "collection-description": {
+      "type": "main-collection-description",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "bf8b6184-b7f0-43b9-8802-81a2198c9b94": {
+          "type": "sidebar_filter",
+          "settings": {
+            "default_open_accordion": true,
+            "color_filter_options": "swatch_with_label"
+          }
+        },
+        "sidebar_subcollections_D8BtJw": {
+          "type": "sidebar_subcollections",
+          "disabled": true,
+          "settings": {
+            "menu": "link-list",
+            "title": "Explore",
+            "default_open_accordion": true
+          }
+        },
+        "sidebar_image_Wegk8Y": {
+          "type": "sidebar_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/398776210_18025637350738650_384288479054817757_n.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bf8b6184-b7f0-43b9-8802-81a2198c9b94",
+        "sidebar_subcollections_D8BtJw",
+        "sidebar_image_Wegk8Y"
+      ],
+      "custom_css": [
+        ".prod-subtitle {color: #4c0dad; font-size: 12px; font-weight: lighter;}",
+        ".prod-title {font-weight: bold; font-size: 15px;}",
+        ".price-item--regular {font-size: 13px;}",
+        ".product-info {color: #4c0dad;}",
+        "\/* для тегу \"NEW\" *\/.new-tag {background: black; color: white;}",
+        "\/* для тегу \"MAN\" *\/.new-man {background: black; color: white;}",
+        "\/* для тегу \"WOMEN\" *\/.women-tag {background: black; color: white;}",
+        "\/* для тегу \"UNISEX\" *\/.unisex-tag {background: black; color: white;}"
+      ],
+      "settings": {
+        "grid": 3,
+        "mobile_single": false,
+        "products_per_page": 30,
+        "sort_by": true,
+        "show_subcollection_grid": false,
+        "sticky_sidebar": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "breadcrumbs",
+    "collection-description",
+    "main"
+  ]
+}

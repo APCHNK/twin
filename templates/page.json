@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "rich_text_9xhr8R": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "title": "Welcome",
+        "rich_text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "alignment": "left",
+        "text_width": 60,
+        "text_size": 15,
+        "padding": 30,
+        "color": "#000000",
+        "background": "",
+        "no_bottom_margin": false
+      }
+    },
+    "image_with_text_aKGBx8": {
+      "type": "image-with-text",
+      "blocks": {
+        "image_wYarfH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/22.jpg"
+          }
+        },
+        "image_HGFi89": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8b86d3116f9055fcf9f6eee6f9531b35.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_wYarfH",
+        "image_HGFi89"
+      ],
+      "settings": {
+        "layout": "right",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "",
+        "text": "<h4><strong>ПРО НАС<\/strong><\/h4><p><strong>TWIN ESSENCE<\/strong> - це український бренд парфумів, що відзначається високою якістю продукції та оригінальним підходом до виробництва. Компанія спеціалізується на створенні парфумів з використанням французької сировини найвищої якості, які відповідають всім міжнародним стандартам.<br\/><\/p><h4><strong>НАТХНЕННЯ<\/strong><\/h4><p>Асортимент ароматів <strong>TWIN ESSENCE<\/strong> натхненний великими лідерами парфумерної індустрії, такими як <em>Tom Ford, Chanel, YSL, Maison Francis Kurkdjian, Kilian<\/em> та інші. Це дозволяє клієнтам насолоджуватися ароматами, що мають вишуканий і розкішний характер.<br\/><\/p><h4><strong>ПРЕМІУМ ДЛЯ КОЖНОГО<\/strong><\/h4><p>Одним з основних принципів бренду є доступність преміум-парфумерії для всіх. <strong>TWIN ESSENCE<\/strong> не сплачує ліцензійних внесків та зборів, і використовує власне пакування, що дозволяє знизити ціни на продукцію. Наприклад, парфум Maison Francis Kurkdjian Baccarat Rouge 540 може коштувати від 15 тисяч гривень, тоді як аналогічний аромат від <strong>TWIN ESSENCE<\/strong>, BARHATT, доступний за ціною 1200 гривень.<br\/><\/p><h4><strong>МІСІЯ TWIN ESSENCE<\/strong><\/h4><p>Місія бренду полягає в тому, щоб кожен міг насолоджуватися розкішними ароматами, не відчуваючи дискомфорту від високої ціни. <strong>TWIN ESSENCE<\/strong> створює парфуми, які не лише задовольняють вишуканий смак, а й дозволяють відчути себе елегантно та стильно в будь-який час.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#efe8d6",
+        "no_bottom_margin": false
+      }
+    },
+    "ss_simple_faq_w6nYdq": {
+      "type": "ss-simple-faq",
+      "blocks": {
+        "text_tAbtp7": {
+          "type": "text",
+          "settings": {
+            "question": "Question text",
+            "answer": "<p>Answer richtext<\/p>"
+          }
+        },
+        "text_GTb6tx": {
+          "type": "text",
+          "settings": {
+            "question": "Question text",
+            "answer": "<p>Answer richtext<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_tAbtp7",
+        "text_GTb6tx"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "icon_color": "#fff",
+        "hover_color": "#EFEFEF",
+        "question_color": "#fff",
+        "background_color": "#0e0e0e",
+        "answer_color": "#000",
+        "answer_bg_color": "#fff",
+        "questions-font-size": 1.3
+      }
+    },
+    "newsletter_9fVBH6": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Subscribe to our newsletter",
+        "newsletter_subheading": "<p>Signup to receive news and updates<\/p>",
+        "show_social_icons": false,
+        "padding": 30,
+        "text_color": "#000000",
+        "background_color": "#f7f7f7"
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "rich_text_9xhr8R",
+    "image_with_text_aKGBx8",
+    "ss_simple_faq_w6nYdq",
+    "newsletter_9fVBH6"
+  ]
+}
